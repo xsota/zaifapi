@@ -11,30 +11,31 @@ zaifが公開しているAPIを簡単に呼べる用にしました。
 
 ２．クラスをインポートし、下記例の用に使用してください
 
-    from zaifapi import *
-    
-    zaif = ZaifPublicApi()
-    print(zaif.last_price('btc_jpy'))
-    
-    zaif = ZaifPrivateApi(key, secret)
-    print(zaif.get_info())
-    # 次回利用時のためにnonceを保存しておく
-    nonce = zaif.nonce
-    zaif = ZaifPrivateApi(key, secret, nonce)
-    print(zaif.get_info2())
-    
-    zaif = ZaifPrivateTokenApi(token)
-    print(zaif.get_info())
-    
-    token = ZaifTokenApi(client_id, client_secret)
-    reponse = token.get_token(code):
-    print(reponse)
-    >>>{'token_type': 'bearer',
-        'state': '2a99cc45cef04c358dbc26db880f9d03',
-        'access_token': 'bb12f3de5df2472290ff15331824a9cf', 
-        'refresh_token': 'ef972ad13e484e17abffbfd5dba51750', 
-        'expires_in': 3600}
-    
+```python
+from zaifapi import *
+
+zaif = ZaifPublicApi()
+print(zaif.last_price('btc_jpy'))
+
+zaif = ZaifPrivateApi(key, secret)
+print(zaif.get_info())
+# 次回利用時のためにnonceを保存しておく
+nonce = zaif.nonce
+zaif = ZaifPrivateApi(key, secret, nonce)
+print(zaif.get_info2())
+
+zaif = ZaifPrivateTokenApi(token)
+print(zaif.get_info())
+
+token = ZaifTokenApi(client_id, client_secret)
+reponse = token.get_token(code):
+print(reponse)
+>>>{'token_type': 'bearer',
+    'state': '2a99cc45cef04c358dbc26db880f9d03',
+    'access_token': 'bb12f3de5df2472290ff15331824a9cf', 
+    'refresh_token': 'ef972ad13e484e17abffbfd5dba51750', 
+    'expires_in': 3600}
+```    
 
 機能紹介
 ------
